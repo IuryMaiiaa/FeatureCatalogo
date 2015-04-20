@@ -4,16 +4,15 @@
 			<and abstract="true" mandatory="true" name="FeatureCatalogo">
 				<feature mandatory="true" name="Catalog"/>
 				<feature mandatory="true" name="Contact_Us"/>
-				<and mandatory="true" name="About_us">
-					<feature name="Map"/>
-					<feature mandatory="true" name="Stores"/>
-				</and>
-				<feature mandatory="true" name="Contacts"/>
-				<and mandatory="true" name="satisfied_Costumes">
-					<feature mandatory="true" name="send_us_Photo"/>
-					<feature name="comments"/>
-				</and>
+				<feature mandatory="true" name="About_us"/>
+				<feature mandatory="true" name="satisfied_Costumes"/>
 				<feature mandatory="true" name="Social_Network_Connection"/>
+				<and mandatory="true" name="Store">
+					<feature mandatory="true" name="Map"/>
+				</and>
+				<and mandatory="true" name="send_us_photo">
+					<feature mandatory="true" name="comments"/>
+				</and>
 			</and>
 		</struct>
 		<constraints/>
