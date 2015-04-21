@@ -8,14 +8,29 @@
 				<feature mandatory="true" name="satisfied_Costumes"/>
 				<feature mandatory="true" name="Social_Network_Connection"/>
 				<and mandatory="true" name="Store">
-					<feature mandatory="true" name="Map"/>
+					<feature name="Map"/>
 				</and>
-				<and mandatory="true" name="send_us_photo">
-					<feature mandatory="true" name="comments"/>
+				<and name="send_us_photo">
+					<feature name="comments"/>
 				</and>
+				<feature mandatory="true" name="Brand"/>
+				<feature mandatory="true" name="Be_model"/>
 			</and>
 		</struct>
-		<constraints/>
+		<constraints>
+			<rule>
+				<imp>
+					<var>send_us_photo</var>
+					<var>Be_model</var>
+				</imp>
+			</rule>
+			<rule>
+				<imp>
+					<var>comments</var>
+					<var>Be_model</var>
+				</imp>
+			</rule>
+		</constraints>
 		<calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
 		<comments/>
 		<featureOrder userDefined="false"/>
