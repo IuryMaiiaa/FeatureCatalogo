@@ -1,0 +1,10 @@
+/**
+ * TODO description
+ */
+public class LoginRoleAdm {
+	private String ROLE_ADM = "ROLE_ADM";
+	
+	public String getRoleAdm() {
+		return ROLE_ADM;
+	}
+}

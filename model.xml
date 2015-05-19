@@ -2,32 +2,43 @@
 	<featureModel chosenLayoutAlgorithm="1">
 		<struct>
 			<and abstract="true" mandatory="true" name="FeatureCatalogo">
-				<feature mandatory="true" name="Catalog"/>
-				<feature mandatory="true" name="Contact_Us"/>
-				<feature mandatory="true" name="About_us"/>
-				<feature mandatory="true" name="satisfied_Costumes"/>
-				<feature mandatory="true" name="Social_Network_Connection"/>
-				<and mandatory="true" name="Store">
-					<feature name="Map"/>
+				<or name="registry">
+					<feature mandatory="true" name="normal"/>
+					<feature mandatory="true" name="adm"/>
+				</or>
+				<or name="login">
+					<feature mandatory="true" name="role_normal"/>
+					<feature mandatory="true" name="role_adm"/>
+				</or>
+				<or mandatory="true" name="conection">
+					<feature mandatory="true" name="facebook"/>
+					<feature mandatory="true" name="twitter"/>
+					<feature mandatory="true" name="instagran"/>
+				</or>
+				<and mandatory="true" name="Catalog">
+					<feature mandatory="true" name="Man"/>
+					<feature mandatory="true" name="Woman"/>
+					<feature mandatory="true" name="children"/>
 				</and>
-				<and name="send_us_photo">
-					<feature name="comments"/>
-				</and>
-				<feature mandatory="true" name="Brand"/>
-				<feature mandatory="true" name="Be_model"/>
+				<feature mandatory="true" name="Stores"/>
+				<feature mandatory="true" name="Brands"/>
+				<or name="Comments">
+					<feature mandatory="true" name="anonymous"/>
+					<feature mandatory="true" name="identified"/>
+				</or>
 			</and>
 		</struct>
 		<constraints>
 			<rule>
 				<imp>
-					<var>send_us_photo</var>
-					<var>Be_model</var>
+					<var>identified</var>
+					<var>login</var>
 				</imp>
 			</rule>
 			<rule>
 				<imp>
-					<var>comments</var>
-					<var>Be_model</var>
+					<var>login</var>
+					<var>registry</var>
 				</imp>
 			</rule>
 		</constraints>

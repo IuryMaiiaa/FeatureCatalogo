@@ -1,0 +1,22 @@
+# Lists all features from the model with manual (first digit) and automatic (second digit) selection
+# 0 = deselected, 1 = selected, 2 = undefined
+21FeatureCatalogo
+22registry
+22normal
+22adm
+22login
+22role_normal
+22role_adm
+21conection
+22facebook
+22twitter
+22instagran
+21Catalog
+22Man
+22Woman
+22children
+21Stores
+22Brands
+22Comments
+22anonymous
+22identified
