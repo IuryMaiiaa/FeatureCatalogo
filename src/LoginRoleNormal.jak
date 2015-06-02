@@ -1,6 +1,6 @@
 
 
-SoUrCe RooT role_normal "../features/role_normal/LoginRoleNormal.jak";/**
+SoUrCe RooT Client "../features/Client/LoginRoleNormal.jak";/**
  * TODO description
  */
 public class LoginRoleNormal {

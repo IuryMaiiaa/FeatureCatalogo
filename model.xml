@@ -2,43 +2,55 @@
 	<featureModel chosenLayoutAlgorithm="1">
 		<struct>
 			<and abstract="true" mandatory="true" name="FeatureCatalogo">
-				<or name="registry">
-					<feature mandatory="true" name="normal"/>
-					<feature mandatory="true" name="adm"/>
-				</or>
-				<or name="login">
-					<feature mandatory="true" name="role_normal"/>
-					<feature mandatory="true" name="role_adm"/>
-				</or>
+				<alt name="User">
+					<alt mandatory="true" name="Client">
+						<feature mandatory="true" name="Email"/>
+						<feature mandatory="true" name="Facebook"/>
+						<feature mandatory="true" name="Twitter"/>
+					</alt>
+					<feature mandatory="true" name="Adm"/>
+				</alt>
 				<or mandatory="true" name="conection">
 					<feature mandatory="true" name="facebook"/>
 					<feature mandatory="true" name="twitter"/>
 					<feature mandatory="true" name="instagran"/>
 				</or>
-				<and mandatory="true" name="Catalog">
+				<or mandatory="true" name="Catalog">
 					<feature mandatory="true" name="Man"/>
 					<feature mandatory="true" name="Woman"/>
 					<feature mandatory="true" name="children"/>
-				</and>
+				</or>
 				<feature mandatory="true" name="Stores"/>
 				<feature mandatory="true" name="Brands"/>
-				<or name="Comments">
-					<feature mandatory="true" name="anonymous"/>
-					<feature mandatory="true" name="identified"/>
-				</or>
+				<feature mandatory="true" name="AboutUs"/>
+				<and name="BeModel">
+					<feature name="SendPhoto"/>
+					<or name="Comments">
+						<feature mandatory="true" name="Anon"/>
+						<feature mandatory="true" name="Ident"/>
+					</or>
+				</and>
 			</and>
 		</struct>
 		<constraints>
 			<rule>
 				<imp>
-					<var>identified</var>
-					<var>login</var>
+					<var>Ident</var>
+					<var>Client</var>
 				</imp>
 			</rule>
 			<rule>
 				<imp>
-					<var>login</var>
-					<var>registry</var>
+					<var>SendPhoto</var>
+					<var>Client</var>
+				</imp>
+			</rule>
+			<rule>
+				<imp>
+					<var>Adm</var>
+					<not>
+						<var>BeModel</var>
+					</not>
 				</imp>
 			</rule>
 		</constraints>

@@ -1,6 +1,6 @@
 
 
-SoUrCe RooT login "../features/login/Login.jak";/**
+SoUrCe RooT User "../features/User/Login.jak";/**
  * TODO description
  */
 public class Login {
